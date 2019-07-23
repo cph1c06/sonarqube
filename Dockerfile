@@ -2,8 +2,8 @@ FROM sonarqube:latest
 
 ENV SONARQUBE_HOME /opt/sonarqube
 
-RUN wget "https://sonarsource.bintray.com/Distribution/sonar-java-plugin/sonar-java-plugin-5.3.0.13828.jar" \
-    && wget "https://sonarsource.bintray.com/Distribution/sonar-javascript-plugin/sonar-javascript-plugin-4.1.0.6085.jar" \
-    && wget "https://sonarsource.bintray.com/Distribution/sonar-typescript-plugin/sonar-typescript-plugin-1.6.0.2388.jar" \
+RUN wget "http://repo.maven.apache.org/maven2/org/sonarsource/java/sonar-java-plugin/5.9.2.16552/sonar-java-plugin-5.9.2.16552.jar" \
+    && wget "http://repo.maven.apache.org/maven2/org/sonarsource/javascript/sonar-javascript-plugin/5.2.1.7778/sonar-javascript-plugin-5.2.1.7778.jar" \
+    && wget "http://repo.maven.apache.org/maven2/org/sonarsource/typescript/sonar-typescript-plugin/1.9.0.3766/sonar-typescript-plugin-1.9.0.3766.jar" \
     && mv *.jar $SONARQUBE_HOME/extensions/plugins \
     && ls -lah $SONARQUBE_HOME/extensions/plugins
